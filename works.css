@@ -1,0 +1,166 @@
+/* --- GLOBAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #fcfcfc;
+    padding-top: 80px; /* Space for the fixed navbar */
+}
+
+/* --- NAVIGATION MENU --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1B0B3B; /* Deep Purple from J.O.S Logo */
+    padding: 20px 10%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #E8B4B8;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Makes the menu horizontal */
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #E8B4B8;
+}
+
+/* --- PAGE HEADER --- */
+.page-header {
+    background-color: #1B0B3B;
+    padding: 80px 10%;
+    text-align: center;
+    color: white;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: #E8B4B8;
+    margin-bottom: 10px;
+}
+
+/* --- PROJECT GALLERY GRID --- */
+.gallery-section {
+    padding: 60px 10%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* --- UPDATED FOR FULL IMAGE VIEW --- */
+.item-image {
+    width: 100%;
+    /* Removed fixed height to allow images to breathe */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #fff; /* Ensures white space looks clean */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-image img {
+    width: 100%;
+    height: auto; /* This ensures the full image is visible */
+    object-fit: contain; /* Prevents cropping */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Add a slight border to the image to define it against the white background */
+.gallery-item {
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+/* --- TESTIMONIALS --- */
+.testimonials-section {
+    padding: 80px 10%;
+    background-color: #f4f4f4;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1B0B3B;
+    margin-bottom: 40px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid #E8B4B8;
+}
+
+.quote {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.client-name {
+    font-weight: bold;
+    color: #1B0B3B;
+}
+
+/* --- FOOTER --- */
+.copyright {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+    color: #888;
+}

@@ -1,0 +1,453 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Hero Section */
+.portfolio-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1B0B3B; /* Deep Purple from J.O.S Logo */
+    color: white;
+    padding: 100px 10%;
+    min-height: 90vh;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.badge {
+    color: #E8B4B8; /* Rose Gold */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 15px 0;
+}
+
+.bio {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 5px solid #E8B4B8;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Buttons */
+.btn {
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.primary-btn {
+    background-color: #E8B4B8;
+    color: #1B0B3B;
+}
+
+.secondary-btn {
+    border: 2px solid #E8B4B8;
+    color: #E8B4B8;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(232, 180, 184, 0.3);
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: white;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1B0B3B;
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 100px 10%;
+    background-color: #fcfcfc;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #1B0B3B;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #E8B4B8;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.item-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.gallery-item:hover .item-image img {
+    transform: scale(1.1);
+}
+
+/* Overlay Effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(27, 11, 59, 0.7); /* Your deep purple with transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.overlay span {
+    color: white;
+    border: 1px solid #E8B4B8;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.item-image:hover .overlay {
+    opacity: 1;
+}
+
+.gallery-item h3 {
+    margin: 15px 0 5px 0;
+    color: #1B0B3B;
+    font-size: 1.2rem;
+}
+
+.gallery-item p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 80px 10%;
+    background-color: #ffffff;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.skill-card {
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.skill-info h3 {
+    font-size: 1.1rem;
+    color: #1B0B3B;
+    font-weight: 600;
+}
+
+.skill-info span {
+    color: #E8B4B8;
+    font-weight: bold;
+}
+
+/* Progress Bar Background */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* The Animated Bar */
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #1B0B3B, #E8B4B8);
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+}
+/* Footer & Contact Section */
+.contact-section {
+    padding: 100px 10% 40px 10%;
+    background-color: #1B0B3B;
+    color: white;
+}
+
+.contact-section .section-title {
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #E8B4B8;
+}
+
+.contact-links p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* Form Styling */
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(232, 180, 184, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1rem;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #E8B4B8;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+    margin-top: 80px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.5;
+}
+
+/* Mobile Responsiveness for Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+}
+/* Navigation Bar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(27, 11, 59, 0.95); /* Deep Purple from your logo */
+    padding: 20px 10%;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Smooth blur effect behind nav */
+    border-bottom: 1px solid rgba(232, 180, 184, 0.2);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #E8B4B8; /* Rose Gold Accent */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    color: #E8B4B8;
+}
+
+/* Smooth Scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add padding to body so the first section isn't hidden under the nav */
+body {
+    padding-top: 80px;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* In a real project, you'd add a hamburger menu icon here */
+    }
+}
+
+/* Page Header for Works Page */
+.page-header {
+    background-color: #1B0B3B;
+    padding: 120px 10% 60px 10%;
+    text-align: center;
+    color: white;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: #E8B4B8;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 100px 10%;
+    background-color: #f4f4f4;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    border-left: 5px solid #E8B4B8;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.client-name {
+    font-weight: bold;
+    color: #1B0B3B;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
