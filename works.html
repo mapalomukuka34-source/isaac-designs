@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Work & Testimonials | Isaac Mukuka</title>
@@ -9,16 +11,22 @@
 <body>
 
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">ISAAC<span>MUKUKA</span></div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html">Skills</a></li>
-                <li><a href="#projects">Full Gallery</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="logo">ISAAC<span>MUKUKA</span></div>
+
+    <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#skills">Skills</a></li> 
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+    </ul>
+</nav>
+
 
     <header class="page-header">
         <h1>Project Showcase</h1>
@@ -75,6 +83,16 @@
     <footer class="copyright">
         <p>&copy; 2026 Isaac Mukuka. All Rights Reserved.</p>
     </footer>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
 
+    hamburger.addEventListener('click', () => {
+        // This adds the 'active' class which tells CSS to show the links
+        navMenu.classList.toggle('active');
+        // This adds the 'is-active' class to turn the bars into an X
+        hamburger.classList.toggle('is-active');
+    });
+</script>
 </body>
 </html>

@@ -9,16 +9,22 @@
 <body>
 
     <nav class="navbar">
-    <div class="nav-container">
+       
+    
+        <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
         <div class="logo">ISAAC<span>MUKUKA</span></div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="works.html">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+        <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="works.html">Work</a></li>
+        <li><a href="index.html#skills">Skills</a></li> 
+        <li><a href="Isaac_Mukuka_CV.pdf" class="cv-btn" download>CV</a></li>
         </ul>
-    </div>
-</nav>
+    </nav>
 
     <section class="portfolio-hero">
         <div class="hero-content">
@@ -33,9 +39,7 @@
                 <a href="#contact" class="btn secondary-btn">Let's Talk</a>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="v.jpeg" alt="Isaac Mukuka">
-        </div>
+        
     </section>
 
     <section class="about-section" id="about">
@@ -156,4 +160,23 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    // Toggle menu visibility
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('is-active'); // For the X animation
+    });
+
+    // Close menu when a link is clicked (good for mobile UX)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('is-active');
+        });
+    });
+</script>
 </html>

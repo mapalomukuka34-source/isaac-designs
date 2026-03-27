@@ -11,6 +11,146 @@ body {
     color: #333;
 }
 
+/* --- NAVIGATION MENU (Glassmorphism Style) --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(27, 11, 59, 0.98); /* Deep Purple */
+    backdrop-filter: blur(10px);
+    padding: 15px 8%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(232, 180, 184, 0.2);
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding-left: 25px;
+}
+
+.logo span {
+    color: #E8B4B8; /* Rose Gold */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    color: #E8B4B8;
+}
+
+/* --- HAMBURGER ICON STYLING --- */
+.hamburger {
+    display: none; /* Hidden on Desktop */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 10001;
+}
+
+.hamburger span {
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* --- MOBILE MENU LOGIC --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show icon on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide links initially */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #1B0B3B;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid rgba(232, 180, 184, 0.2);
+    }
+
+    /* When the 'active' class is added via JS, show the menu */
+    .nav-links.active {
+        display: flex;
+    }
+}
+/* --- MOBILE NAVIGATION --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Shows the bars */
+    }
+
+    .nav-links {
+        display: none; /* Hidden until 'active' class is added */
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #1B0B3B;
+        width: 100%;
+        flex-direction: column;
+        padding: 20px 0;
+        text-align: center;
+        border-bottom: 2px solid #E8B4B8;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* --- HERO SECTION REFINEMENT (No Image) --- */
+    .portfolio-hero {
+        text-align: center;
+        padding: 120px 5% 60px 5%;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cta-container {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 10px;
+    }
+}
+
+/* Hamburger to X Animation */
+.hamburger.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
 /* Hero Section */
 .portfolio-hero {
     display: flex;
@@ -71,6 +211,7 @@ h1 {
     transition: 0.3s;
     display: inline-block;
     margin-right: 15px;
+    
 }
 
 .primary-btn {
@@ -81,11 +222,21 @@ h1 {
 .secondary-btn {
     border: 2px solid #E8B4B8;
     color: #E8B4B8;
+    
 }
 
 .btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(232, 180, 184, 0.3);
+}
+@media (max-width: 768px) {
+    .btn {
+        display: block;        /* stack buttons */
+        margin-right: 0;       /* remove horizontal spacing */
+        margin-bottom: 15px;   /* add vertical spacing */
+        width: 100%;           /* optional: full width buttons */
+        text-align: center;
+    }
 }
 
 /* About Section */
@@ -450,4 +601,71 @@ body {
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 1px;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+
+   
+    .navbar {
+        position: fixed;
+        top: 0;
+        z-index: 9999; 
+        background-color: #1B0B3B; /* Solid background so links are visible */
+        height: auto;
+        padding: 10px 5%;
+    }
+
+    /* 2. Push the Hero section down so it starts AFTER the navbar */
+    .hero-section {
+        margin-top: 60px; /* Adjust this number if your navbar is taller */
+        padding: 40px 5%;
+        flex-direction: column; /* Stacks your text above your photo */
+        text-align: center;
+    }
+
+    /* 3. Scale the photo for mobile so it doesn't take the whole screen */
+    .hero-image img {
+        width: 80%;
+        max-width: 250px;
+        margin: 20px auto 0 auto;
+    }
+
+    /* 4. Make the buttons stack or sit neatly */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    /* 1. Adjust the Hero/Header Text */
+    .hero-section h1, .page-header h1 {
+        font-size: 2.2rem; /* Shrinks the title so it fits on one screen */
+    }
+
+    /* 2. Stack the Gallery in 1 column instead of 3 */
+    .gallery-grid, .testimonial-grid, .skills-grid {
+        grid-template-columns: 1fr; /* Forces items to stack vertically */
+        gap: 20px;
+    }
+
+    /* 3. Adjust Padding so content isn't touching the edges */
+    .container, .gallery-section, .contact-section {
+        padding: 40px 5%;
+    }
+
+    /* 4. Fix the Footer/Contact layout */
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* 5. Simple Mobile Nav Fix */
+    .nav-links {
+        gap: 10px;
+    }
+    .nav-links a {
+        font-size: 0.75rem; /* Makes menu items smaller to fit the row */
+    }
 }

@@ -3,164 +3,248 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background-color: #fcfcfc;
-    padding-top: 80px; /* Space for the fixed navbar */
+    color: #1B0B3B;
+}
+/* --- HAMBURGER ICON STYLING --- */
+.hamburger {
+    display: none; /* Hidden on Desktop */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 10001;
 }
 
-/* --- NAVIGATION MENU --- */
+.hamburger span {
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* --- NAVIGATION (Refined) --- */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #1B0B3B; /* Deep Purple from J.O.S Logo */
-    padding: 20px 10%;
-    z-index: 1000;
-}
-
-.nav-container {
+    background: rgba(27, 11, 59, 0.98); 
+    backdrop-filter: blur(10px);
+    padding: 15px 8%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 25px;
+    z-index: 10000;
+    border-bottom: 1px solid rgba(232, 180, 184, 0.2);
 }
 
 .logo {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 800;
     letter-spacing: 2px;
 }
 
-.logo span {
-    color: #E8B4B8;
-}
+.logo span { color: #E8B4B8; }
 
 .nav-links {
     list-style: none;
-    display: flex; /* Makes the menu horizontal */
+    display: flex;
     gap: 30px;
+    margin-left: auto;
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     font-weight: 500;
+    letter-spacing: 1px;
     transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: #E8B4B8;
+.active-link {
+    color: #E8B4B8 !important;
+    border-bottom: 2px solid #E8B4B8;
+    padding-bottom: 5px;
 }
 
 /* --- PAGE HEADER --- */
 .page-header {
-    background-color: #1B0B3B;
-    padding: 80px 10%;
+    background: linear-gradient(135deg, #1B0B3B 0%, #2D1554 100%);
+    padding: 140px 10% 80px 10%;
     text-align: center;
     color: white;
 }
 
 .page-header h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #E8B4B8;
     margin-bottom: 10px;
+    letter-spacing: -1px;
 }
 
-/* --- PROJECT GALLERY GRID --- */
+.page-header p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- GALLERY SECTION --- */
 .gallery-section {
-    padding: 60px 10%;
+    padding: 80px 10%;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
 }
 
 .gallery-item {
     background: white;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    transition: transform 0.4s ease;
+    border: 1px solid #f0f0f0;
 }
 
-/* --- UPDATED FOR FULL IMAGE VIEW --- */
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
 .item-image {
     width: 100%;
-    /* Removed fixed height to allow images to breathe */
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    background-color: #fff; /* Ensures white space looks clean */
+    height: 300px;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .item-image img {
-    width: 100%;
-    height: auto; /* This ensures the full image is visible */
-    object-fit: contain; /* Prevents cropping */
-    display: block;
-    transition: transform 0.3s ease;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Best for logos and flyers */
 }
 
-/* Optional: Add a slight border to the image to define it against the white background */
-.gallery-item {
-    border: 1px solid #eee;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.gallery-item h3 {
+    padding: 20px 20px 5px 20px;
+    color: #1B0B3B;
 }
 
+.gallery-item p {
+    padding: 0 20px 25px 20px;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
 
-
-/* --- TESTIMONIALS --- */
+/* --- TESTIMONIALS (Modernized) --- */
 .testimonials-section {
-    padding: 80px 10%;
-    background-color: #f4f4f4;
+    background-color: #f8f1f2; /* Subtle rose tint */
+    padding: 100px 10%;
 }
 
 .section-title {
     text-align: center;
-    font-size: 2.2rem;
-    color: #1B0B3B;
-    margin-bottom: 40px;
-}
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
 }
 
 .testimonial-card {
+
+    margin-bottom: 20px; /*adds space between cards */
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    border-left: 5px solid #E8B4B8;
+    padding: 50px;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(27, 11, 59, 0.05);
+}
+
+.testimonial-card::before {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 5rem;
+    color: #E8B4B8;
+    opacity: 0.3;
+    font-family: serif;
 }
 
 .quote {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
     font-style: italic;
-    color: #555;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .client-name {
-    font-weight: bold;
+    font-weight: 800;
     color: #1B0B3B;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
 }
 
-/* --- FOOTER --- */
-.copyright {
-    text-align: center;
-    padding: 40px 0;
-    font-size: 0.9rem;
-    color: #888;
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .navbar { padding: 15px 5%; }
+    
+    .hamburger { display: flex; }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #1B0B3B;
+        flex-direction: column;
+        padding: 40px 0;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .nav-links.active { display: flex; }
+
+    .page-header h1 { font-size: 2.5rem; }
+    
+    .gallery-grid { grid-template-columns: 1fr; }
 }
+
+/* Footer & Contact Section */
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: #f1f1f1; /* optional */
+}
+.contact-section {
+    padding: 100px 10% 40px 10%;
+    background-color: #1B0B3B;
+    color: white;
+}
+.copyright {
+    margin-top: 80px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.5;
+}
+
+/* Hamburger Animation */
+.hamburger span { width: 25px; height: 3px; background: white; border-radius: 5px; transition: 0.3s; }
+.hamburger.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.is-active span:nth-child(2) { opacity: 0; }
+.hamburger.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
